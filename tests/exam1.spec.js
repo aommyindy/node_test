@@ -22,4 +22,28 @@ describe('Exam1', () => {
             expect(w).toEqual('ThisWorld')
         })
     })
+
+    test('should prom retrun resolve = Hello', () => {
+        exam1.prom(11).then(result => {
+            expect(result).toEqual('Hello')
+        })
+    })
+
+    test('should prom retrun reject = lower than then', () => {
+        exam1.prom(9).catch(result => {
+            expect(result).toEqual('lower than then')
+        })
+    })
+
+    test('should await hello value', async () => {
+        expect(await exam1.prom(11)).toEqual('Hello')
+    })
+
+    test('should catch exception lower than then value', async () => {
+        try {
+            const result = await exam1.prom(9)
+        } catch (e) {
+             expect(e).toEqual('lower than then')
+        }
+    })
 })
