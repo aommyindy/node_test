@@ -58,4 +58,16 @@ describe('Exam1', () => {
             expect(err).toEqual('more than ten')
         })
     })
+
+    test('should seriesCallback retrun = thre', () => {
+        exam1.seriesCallback(8, (err, result) => {
+            expect(result).toEqual(["one", "two", "three"])
+        })
+    })
+
+    test('should seriesCallback error = more than 10', () => {
+        exam1.seriesCallback(11, (err, result) => {
+            expect(err).toEqual('error more than 10')
+        })
+    })
 })

@@ -37,6 +37,21 @@ class Exam1 {
             cd(err, result)
         })
     }
+
+    seriesCallback(value, cd) {
+        asyncModule.series([
+            (callback) => {
+                if (value > 10) callback('error more than 10')
+                else callback(null, 'one')
+            },
+            (callback) => {
+                callback(null, 'two')
+            },
+            (callback) => {
+                callback(null, 'three')
+            }
+        ], cd)
+    }
 }
 
 module.exports = new Exam1('This')
