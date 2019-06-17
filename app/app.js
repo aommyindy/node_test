@@ -5,4 +5,4 @@ http.createServer((req, res) => {
     res.end('yes you can\n')
 }).listen(8000)
 
-console.log('Server start!!')
+console.log('Server start!! prot 8000')
