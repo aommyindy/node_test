@@ -70,4 +70,16 @@ describe('Exam1', () => {
             expect(err).toEqual('error more than 10')
         })
     })
+
+    test('should parallelCallback retrun = one and two', () => {
+        exam1.parallelCallback(8, (err, result) => {
+            expect(result).toEqual(["one", "two"])
+        })
+    })
+
+    test('should parallelCallback error = more than 10', () => {
+        exam1.parallelCallback(11, (err, result) => {
+            expect(err).toEqual("error more than 10")
+        })
+    })
 })

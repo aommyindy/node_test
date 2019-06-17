@@ -52,6 +52,22 @@ class Exam1 {
             }
         ], cd)
     }
+
+    parallelCallback(value, cd) {
+        asyncModule.parallel([
+            (callback) => {
+                setTimeout(() =>{
+                    if (value > 10) callback('error more than 10')
+                    else callback(null, 'one')
+                }, 200) 
+            },
+            (callback) => {
+                setTimeout(() => {
+                    callback(null, 'two')
+                }, 400)
+            }
+        ], cd)
+    }
 }
 
 module.exports = new Exam1('This')
