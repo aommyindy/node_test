@@ -1,3 +1,4 @@
+const asyncModule = require('async')
 class Exam1 {
     constructor(var1) {
         this.var1 = var1
@@ -17,6 +18,23 @@ class Exam1 {
                 reject('lower than then')
             else
                 resolve('Hello')
+        })
+    }
+
+    waterFallCallback(value, cd) {
+        asyncModule.waterfall([
+            (callback) => {
+                if (value > 10) {
+                    callback('more than ten')
+                } else {
+                    callback(null, "one", "two")
+                }
+            }, 
+            (var1, var2, callback) => {
+                callback(null, 'success')
+            }
+        ], (err, result) => {
+            cd(err, result)
         })
     }
 }

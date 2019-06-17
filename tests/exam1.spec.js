@@ -46,4 +46,16 @@ describe('Exam1', () => {
              expect(e).toEqual('lower than then')
         }
     })
+
+    test('should waterFallCallback retrun = success', () => {
+        exam1.waterFallCallback(8, (err, result) => {
+            expect(result).toEqual('success')
+        })
+    })
+
+    test('should waterFallCallback error = more than ten', () => {
+        exam1.waterFallCallback(11, (err, result) => {
+            expect(err).toEqual('more than ten')
+        })
+    })
 })
