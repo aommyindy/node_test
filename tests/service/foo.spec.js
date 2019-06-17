@@ -1,4 +1,4 @@
-require("../app/service/foo")
+require("../../app/service/foo")
 
 describe('Foo Service', () => {
     it('should return foo!', () => {
