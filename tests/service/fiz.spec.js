@@ -1,3 +1,7 @@
+/*
+EXPORT A NAMED FUNCTION
+*/
+
 const fiz = require('../../app/service/fiz').fiz
 const fiz2 = require('../../app/service/fiz').fiz2
 

@@ -1,3 +1,7 @@
+/*
+DEFINE A GLOBAL
+*/
+
 require("../../app/service/foo")
 
 describe('Foo Service', () => {
