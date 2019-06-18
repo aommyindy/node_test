@@ -33,8 +33,11 @@ describe('app', () => {
         const resp = await request(app).get('/users/1/books/8023123')
         expect(resp.statusCode).toEqual(200)
         expect(resp.body).toEqual({
-            userId: "1",
-            bookId: "8023123"
+            success: true,
+            data: {
+                userId: "1",
+                bookId: "8023123"
+            }
         })
     })
 })

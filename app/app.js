@@ -25,7 +25,12 @@ app.post('/', (req, res) => {
 })
 
 app.get('/users/:userId/books/:bookId', (req, res) => {
-    res.json(req.params)
+    const data = req.params
+
+    res.json({
+        success: true,
+        data: data
+    })
 })
 
 module.exports = app
