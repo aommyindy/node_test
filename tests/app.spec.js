@@ -12,4 +12,20 @@ describe('app', () => {
         const resp = await request(app).get('/dummy')
         expect(resp.statusCode).toEqual(404)
     })
+
+    it('should post data and return json data resopons', async () => {
+        const resp = await request(app)
+            .post('/')
+            .send({
+                "code": "007"
+            })
+
+        expect(resp.statusCode).toEqual(200)
+        expect(resp.body).toEqual({
+            success: true,
+            data: {
+                "code": "007"
+            }
+        })
+    });
 })
