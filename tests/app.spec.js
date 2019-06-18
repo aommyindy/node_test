@@ -27,5 +27,14 @@ describe('app', () => {
                 "code": "007"
             }
         })
-    });
+    })
+
+    it('should data userId and bookId', async () => {
+        const resp = await request(app).get('/users/1/books/8023123')
+        expect(resp.statusCode).toEqual(200)
+        expect(resp.body).toEqual({
+            userId: "1",
+            bookId: "8023123"
+        })
+    })
 })

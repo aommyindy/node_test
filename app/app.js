@@ -24,4 +24,8 @@ app.post('/', (req, res) => {
     })
 })
 
+app.get('/users/:userId/books/:bookId', (req, res) => {
+    res.json(req.params)
+})
+
 module.exports = app
