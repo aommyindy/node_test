@@ -1,8 +1,8 @@
-const http = require('http')
+const express = require('express')
+const cors = require('cors')
 
-http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'})
-    res.end('yes you can\n')
-}).listen(8000)
+const app = express()
+app.use(cors())
+app.options('*', cors())
 
-console.log('Server start!! prot 8000')
+module.exports = app

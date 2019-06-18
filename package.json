@@ -2,9 +2,9 @@
   "name": "node_jest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/server",
   "scripts": {
-    "start": "node app/app",
+    "start": "node .",
     "test": "jest",
     "jest": "jest"
   },
@@ -16,6 +16,8 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "async": "^3.0.1"
+    "async": "^3.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }
